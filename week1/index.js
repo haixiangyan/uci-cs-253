@@ -64,4 +64,4 @@ for (let [word, frequency] of Object.entries(TEST_CASES)) {
     console.log(`Current: ${word} Result: ${results[word]} Actual: ${frequency}`)
 }
 
-console.log(isPass ? 'Pass all test cases!' : 'Some test cases fail')
+console.log(isPass ? 'Passed all test cases!' : 'Some test cases fail')
