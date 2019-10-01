@@ -56,6 +56,12 @@ const TEST_CASES = {
     good: 201
 }
 
+let isPass = true
 for (let [word, frequency] of Object.entries(TEST_CASES)) {
+    if (results[word] !== frequency) {
+        isPass = false
+    }
     console.log(`Current: ${word} Result: ${results[word]} Actual: ${frequency}`);
 }
+
+console.log(isPass ? 'Pass all test cases!' : 'Some test cases fail')
