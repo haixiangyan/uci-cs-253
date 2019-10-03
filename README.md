@@ -6,5 +6,5 @@ Homework of CS 253 in UCI
 ```
 $ cd week1
 
-$ node index.js
+$ node index.js stop_words.txt pride-and-prejudice.txt
 ```
