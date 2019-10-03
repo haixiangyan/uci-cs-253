@@ -1,14 +1,20 @@
 const fs = require('fs')
+const path = require('path')
 
 const SEPARATOR = /[ \t\n,.'":;_\-!@#$%^&*()<>\/\\{}\[\]+=|~`?]+/
 const UTF8 = 'utf8'
-const ARTICLE_URL = '../pride-and-prejudice.txt'
-const STOP_WORDS_URL = '../stop_words.txt'
+
+if (process.argv.length !== 4){
+    console.log('Usage: node index.js stop_words.txt pride-and-prejudice.txt')
+    return
+}
+const stopWordsPath = path.join('../', process.argv[2])
+const articlePath = path.join('../', process.argv[3])
 
 // Function to get term frequency from a given article
-function termFrequency() {
-    const stopWords = new Set(fs.readFileSync(STOP_WORDS_URL, UTF8).split(','))
-    const article = fs.readFileSync(ARTICLE_URL, UTF8)
+function termFrequency(stopWordsPath, articlePath) {
+    const stopWords = new Set(fs.readFileSync(stopWordsPath, UTF8).split(','))
+    const article = fs.readFileSync(articlePath, UTF8)
     const words = article.split(SEPARATOR).map(word => word.toLowerCase())
 
     let frequency = {}
@@ -25,7 +31,7 @@ function termFrequency() {
 }
 
 // Test
-const results = termFrequency()
+const results = termFrequency(stopWordsPath, articlePath)
 
 // Test cases
 const TEST_CASES = {
