@@ -11,3 +11,13 @@ $ cd uci-cs-253/week1
 
 $ node index.js stop_words.txt pride-and-prejudice.txt
 ```
+
+## Week 2
+
+### Five.js
+
+```
+$ cd uci-cs-253/week2
+
+$ node Five.js ../pride-and-prejudice.txt
+```
