@@ -27,5 +27,5 @@ counts.sort((a, b) => {
 
 // Print out results
 for (let i = 0; i < 25; i++) {
-    console.log(counts[i].word, counts[i].frequency)
+    console.log(counts[i].word, '-', counts[i].frequency)
 }
