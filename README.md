@@ -21,3 +21,11 @@ $ cd uci-cs-253/week2
 
 $ node Five.js ../pride-and-prejudice.txt
 ```
+
+### Six.js
+
+```
+$ cd uci-cs-253/week2
+
+$ node Six.js ../pride-and-prejudice.txt
+```
