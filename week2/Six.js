@@ -51,5 +51,4 @@ function readFile(pathToFile) {
         }
     }
 }
-
-readFile(process[2]).filterAndNormalize().removeStopWords().frequencies().sort().printAll()
+readFile(process.argv[2]).filterAndNormalize().removeStopWords().frequencies().sort().printAll()
