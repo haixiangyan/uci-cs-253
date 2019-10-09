@@ -2,8 +2,8 @@ const fs = require('fs')
 
 const UTF8 = 'utf8'
 
-function readFile(pathToFile) {
-    const strData = fs.readFileSync(pathToFile, 'utf8')
+function readFile() {
+    const strData = fs.readFileSync(articleFile, 'utf8')
 
     return {
         filterAndNormalize() {
@@ -12,7 +12,7 @@ function readFile(pathToFile) {
 
             return {
                 removeStopWords() {
-                    const stopWords = new Set(fs.readFileSync('../stop_words.txt', UTF8).split(',').map(stopWord => stopWord.replace('\n', '')))
+                    const stopWords = new Set(fs.readFileSync(stopWordsFile, UTF8).split(',').map(stopWord => stopWord.replace('\n', '')))
                     const wordList = words.filter(word => !stopWords.has(word))
 
                     return {
@@ -51,4 +51,8 @@ function readFile(pathToFile) {
         }
     }
 }
-readFile(process.argv[2]).filterAndNormalize().removeStopWords().frequencies().sort().printAll()
+
+const stopWordsFile = process.argv[2]
+const articleFile = process.argv[3]
+
+readFile().filterAndNormalize().removeStopWords().frequencies().sort().printAll()

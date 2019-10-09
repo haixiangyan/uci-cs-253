@@ -19,7 +19,7 @@ $ node index.js stop_words.txt pride-and-prejudice.txt
 ```
 $ cd uci-cs-253/week2
 
-$ node Five.js ../pride-and-prejudice.txt
+$ node Five.js ../stop_words.txt ../pride-and-prejudice.txt
 ```
 
 ### Six.js
@@ -27,5 +27,5 @@ $ node Five.js ../pride-and-prejudice.txt
 ```
 $ cd uci-cs-253/week2
 
-$ node Six.js ../pride-and-prejudice.txt
+$ node Six.js ../stop_words.txt ../pride-and-prejudice.txt
 ```

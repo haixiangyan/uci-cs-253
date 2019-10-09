@@ -2,8 +2,8 @@ const fs = require('fs')
 
 const UTF8 = 'utf8'
 
-function readFile(pathToFile) {
-    return fs.readFileSync(pathToFile, UTF8)
+function readFile() {
+    return fs.readFileSync(articleFile, UTF8)
 }
 
 function filterAndNormalize(strData) {
@@ -12,7 +12,7 @@ function filterAndNormalize(strData) {
 }
 
 function removeStopWords(wordList) {
-    const stopWords = new Set(fs.readFileSync('../stop_words.txt', UTF8).split(',').map(stopWord => stopWord.replace('\n', '')))
+    const stopWords = new Set(fs.readFileSync(stopWordsFile, UTF8).split(',').map(stopWord => stopWord.replace('\n', '')))
     return wordList.filter(word => !stopWords.has(word))
 }
 
@@ -45,12 +45,15 @@ function printAll(wordFreqs) {
     }
 }
 
+const stopWordsFile = process.argv[2]
+const articleFile = process.argv[3]
+
 printAll(
     sort(
         frequencies(
             removeStopWords(
                 filterAndNormalize(
-                    readFile(process.argv[2])
+                    readFile()
                 )
             )
         )
