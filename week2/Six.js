@@ -3,7 +3,7 @@ const fs = require('fs')
 const UTF8 = 'utf8'
 
 function readFile(pathToFile) {
-    const strData = fs.readFileSync('../pride-and-prejudice.txt', 'utf8')
+    const strData = fs.readFileSync(pathToFile, 'utf8')
 
     return {
         filterAndNormalize() {
