@@ -32,18 +32,26 @@ $ node Six.js ../stop_words.txt ../pride-and-prejudice.txt
 
 ## Week 3
 
-### 8.1.js
+### A.py
 
 ```
 $ cd uci-cs-253/week2
 
-$ node 8.1.js ../stop_words.txt ../pride-and-prejudice.txt
+$ node B.js ../stop_words.txt ../pride-and-prejudice.txt
 ```
 
-### 9.1.js
+### B.js
 
 ```
 $ cd uci-cs-253/week2
 
-$ node 9.1.js ../stop_words.txt ../pride-and-prejudice.txt
+$ node B.js ../stop_words.txt ../pride-and-prejudice.txt
+```
+
+### Cjs
+
+```
+$ cd uci-cs-253/week2
+
+$ node C.js ../stop_words.txt ../pride-and-prejudice.txt
 ```
