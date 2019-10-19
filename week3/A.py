@@ -28,8 +28,8 @@ def count(word_list, stopwords, wordfreqs):
     fact = (lambda f: (lambda word_list: None if len(word_list) == 0 else stat(word_list, stopwords, wordfreqs, f)))
     Y(fact)(word_list)
 
-stop_words = set(open('../stop_words.txt').read().split(','))
-words = re.findall('[a-z]{2,}', open(sys.argv[1]).read().lower())
+stop_words = set(open(sys.argv[1]).read().split(','))
+words = re.findall('[a-z]{2,}', open(sys.argv[2]).read().lower())
 
 word_freqs = {}
 # Theoretically, we would just call count(words, stop_words, word_freqs)
