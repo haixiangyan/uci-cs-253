@@ -2,22 +2,22 @@ const fs = require('fs')
 
 const UTF8 = 'utf8'
 
-function extractWords(pathToFile) {
+function extractWords(obj, pathToFile) {
     const article = fs.readFileSync(pathToFile, UTF8)
     const pattern = /[a-zA-Z]{2,}/g
-    this['data'] = article.match(pattern).map(word => word.toLowerCase())
+    obj['data'] = article.match(pattern).map(word => word.toLowerCase())
 }
 
-function loadStopWords(pathToFile) {
-    this['stopWords'] = new Set(
+function loadStopWords(obj, pathToFile) {
+    obj['stopWords'] = new Set(
         fs.readFileSync(pathToFile, UTF8)
             .split(',')
             .map(stopWord => stopWord.replace('\n', ''))
     )
 }
 
-function incrementCount(word) {
-    this['freqs'][word] = !this['freqs'][word] ? 1 : this['freqs'][word] + 1
+function incrementCount(obj, word) {
+    obj['freqs'][word] = !obj['freqs'][word] ? 1 : obj['freqs'][word] + 1
 }
 
 function sort(wordFreq) {
@@ -31,26 +31,26 @@ function sort(wordFreq) {
 
 let dataStorageObj = {
     data: [],
-    init(pathToFile) {
-        extractWords.call(this, pathToFile)
-    },
-    words: () => dataStorageObj['data']
+    init: (pathToFile) => extractWords(dataStorageObj, pathToFile),
+    words() {
+        return this['data']
+    }
 }
 
 let stopWordsObj = {
     stopWords: [],
-    init() {
-        loadStopWords.call(this, stopWordsFile)
-    },
-    isStopWord: (word) => stopWordsObj['stopWords'].has(word)
+    init: () => loadStopWords(stopWordsObj, stopWordsFile),
+    isStopWord(word) {
+        return this['stopWords'].has(word)
+    }
 }
 
 let wordFreqsObj = {
     freqs: {},
-    incrementCount(word) {
-        incrementCount.call(this, word)
-    },
-    sorted: () => sort(wordFreqsObj['freqs'])
+    incrementCount: (word) => incrementCount(wordFreqsObj, word),
+    sorted() {
+        return sort(this['freqs'])
+    }
 }
 
 const articleFile = '../pride-and-prejudice.txt'
