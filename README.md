@@ -48,7 +48,7 @@ $ cd uci-cs-253/week3
 $ node B.js ../stop_words.txt ../pride-and-prejudice.txt
 ```
 
-### Cjs
+### C.js
 
 ```
 $ cd uci-cs-253/week3

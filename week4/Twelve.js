@@ -60,8 +60,13 @@ for (let word of words) {
     }
 }
 
-// Print results
-const results = wordFreqsObj['sorted']()
-for (let i = 0; i < 25; i++) {
-    console.log(results[i].word, '-', results[i].frequency)
+// Add top25 method to wordFreqsObj
+wordFreqsObj['top25'] = () => {
+    const results = wordFreqsObj['sorted']()
+    for (let i = 0; i < 25; i++) {
+        console.log(results[i].word, '-', results[i].frequency)
+    }
 }
+
+// Print results
+wordFreqsObj['top25']()
