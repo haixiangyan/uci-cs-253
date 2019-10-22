@@ -47,8 +47,8 @@ let wordFreqsObj = {
     sorted: () => sort(wordFreqsObj['freqs'])
 }
 
-const articleFile = '../pride-and-prejudice.txt'
-const stopWordsFile = '../stop_words.txt'
+const stopWordsFile = process.argv[2]
+const articleFile = process.argv[3]
 
 stopWordsObj['init']()
 dataStorageObj['init'](articleFile)

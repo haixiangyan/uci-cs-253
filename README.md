@@ -55,3 +55,29 @@ $ cd uci-cs-253/week3
 
 $ node C.js ../stop_words.txt ../pride-and-prejudice.txt
 ```
+
+## Week 4
+
+### 12.1.js
+
+```
+$ cd uci-cs-253/week4
+
+$ python 12.1.js ../stop_words.txt ../pride-and-prejudice.txt
+```
+
+### 12.2.js
+
+```
+$ cd uci-cs-253/week4
+
+$ python 12.2.js ../stop_words.txt ../pride-and-prejudice.txt
+```
+
+### 12.3.js
+
+```
+$ cd uci-cs-253/week4
+
+$ python 12.3.js ../stop_words.txt ../pride-and-prejudice.txt
+```
