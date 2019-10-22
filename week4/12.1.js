@@ -60,6 +60,7 @@ for (let word of words) {
     }
 }
 
+// =======================================
 // Print results
 const results = wordFreqsObj['sorted']()
 for (let i = 0; i < 25; i++) {

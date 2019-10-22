@@ -2,22 +2,22 @@ const fs = require('fs')
 
 const UTF8 = 'utf8'
 
-function extractWords(obj, pathToFile) {
+function extractWords(pathToFile) {
     const article = fs.readFileSync(pathToFile, UTF8)
     const pattern = /[a-zA-Z]{2,}/g
-    obj['data'] = article.match(pattern).map(word => word.toLowerCase())
+    this['data'] = article.match(pattern).map(word => word.toLowerCase())
 }
 
-function loadStopWords(obj, pathToFile) {
-    obj['stopWords'] = new Set(
+function loadStopWords(pathToFile) {
+    this['stopWords'] = new Set(
         fs.readFileSync(pathToFile, UTF8)
             .split(',')
             .map(stopWord => stopWord.replace('\n', ''))
     )
 }
 
-function incrementCount(obj, word) {
-    obj['freqs'][word] = !obj['freqs'][word] ? 1 : obj['freqs'][word] + 1
+function incrementCount(word) {
+    this['freqs'][word] = !this['freqs'][word] ? 1 : this['freqs'][word] + 1
 }
 
 function sort(wordFreq) {
@@ -31,19 +31,25 @@ function sort(wordFreq) {
 
 let dataStorageObj = {
     data: [],
-    init: (pathToFile) => extractWords(dataStorageObj, pathToFile),
+    init(pathToFile) {
+        extractWords.call(this, pathToFile)
+    },
     words: () => dataStorageObj['data']
 }
 
 let stopWordsObj = {
     stopWords: [],
-    init: () => loadStopWords(stopWordsObj, stopWordsFile),
+    init() {
+        loadStopWords.call(this, stopWordsFile)
+    },
     isStopWord: (word) => stopWordsObj['stopWords'].has(word)
 }
 
 let wordFreqsObj = {
     freqs: {},
-    incrementCount: (word) => incrementCount(wordFreqsObj, word),
+    incrementCount(word) {
+        incrementCount.call(this, word)
+    },
     sorted: () => sort(wordFreqsObj['freqs'])
 }
 
@@ -60,14 +66,10 @@ for (let word of words) {
     }
 }
 
-// =====================================
-// Add top25 method to wordFreqsObj
-wordFreqsObj['top25'] = () => {
-    const results = wordFreqsObj['sorted']()
-    for (let i = 0; i < 25; i++) {
-        console.log(results[i].word, '-', results[i].frequency)
-    }
+// =======================================
+// Print results
+const results = wordFreqsObj['sorted']()
+for (let i = 0; i < 25; i++) {
+    console.log(results[i].word, '-', results[i].frequency)
 }
 
-// Print results
-wordFreqsObj['top25']()
