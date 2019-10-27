@@ -56,8 +56,8 @@ function sort(wordFreq) {
     return rawCounts.sort((a, b) => b.frequency - a.frequency)
 }
 
-const articleFile = '../pride-and-prejudice.txt'
-const stopWordsFile = '../stop_words.txt'
+const stopWordsFile = process.argv[2]
+const articleFile = process.argv[3]
 
 function main() {
     const wordFreqs = sort.call(null,
