@@ -1,0 +1,23 @@
+{
+  "name": "uci-cs-253",
+  "version": "1.0.0",
+  "description": "Student Name: Haixiang Yan; Student ID: 37208306 Homework of CS 253 in UCI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haixiang6123/uci-cs-253.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Haixiang6123/uci-cs-253/issues"
+  },
+  "homepage": "https://github.com/Haixiang6123/uci-cs-253#readme",
+  "dependencies": {
+    "ini": "^1.3.5"
+  }
+}
