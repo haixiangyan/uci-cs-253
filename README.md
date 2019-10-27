@@ -97,3 +97,14 @@ $ cd uci-cs-253/week4
 
 $ node 15.2.js ../stop_words.txt ../pride-and-prejudice.txt
 ```
+
+## Week 5
+
+### 19.1
+If you download from Canvas, please run `npm install` first.
+
+```
+$ cd uci-cs-253/week5/Nineteen
+
+$ node tf-19.js ../../stop_words.txt ../../pride-and-prejudice.txt
+```
