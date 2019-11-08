@@ -64,6 +64,6 @@ for (let [word, frequency] of Object.entries(wordFreqs)) {
 
 rawCounts.sort((a, b) => b.frequency - a.frequency)
 
-for (let i = 0; i < 25; i++) {
+for (let i = 0; i <= 25; i++) {
     console.log(rawCounts[i].word, '-', rawCounts[i].frequency)
 }
