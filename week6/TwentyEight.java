@@ -98,6 +98,11 @@ public class TwentyEight {
     private static class StopWordManager extends ActiveWFObject {
 
         private Set<String> mStopWords;
+        private String path;
+
+        public StopWordManager(String path) {
+            this.path = path;
+        }
 
         @Override
         protected void dispatch(Message<?> msg) {
@@ -121,7 +126,7 @@ public class TwentyEight {
         }
 
         private void init() {
-            try (Stream<String> swStream = Files.lines(Paths.get("../stop_words.txt"))) {
+            try (Stream<String> swStream = Files.lines(Paths.get(this.path))) {
                 mStopWords = Stream.concat(swStream.map(line -> line.split(",")).flatMap(Arrays::stream),
                         Arrays.stream("a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z".split(","))).
                         collect(Collectors.toCollection(HashSet::new));
@@ -189,9 +194,10 @@ public class TwentyEight {
 
     public static void main(String[] args) throws InterruptedException {
         String articlePath = "../pride-and-prejudice.txt";
+        String stopWordsPath = "../stop_words.txt";
 
         DataStorageManager dataStorageManager = new DataStorageManager();
-        StopWordManager stopWordManager = new StopWordManager();
+        StopWordManager stopWordManager = new StopWordManager(stopWordsPath);
         WordFrequencyManager wordFreqManager = new WordFrequencyManager();
         ActiveWFObject[] actors = new ActiveWFObject[] { dataStorageManager, stopWordManager, wordFreqManager };
         for (ActiveWFObject a : actors) {
