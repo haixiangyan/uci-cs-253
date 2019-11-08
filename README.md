@@ -115,3 +115,39 @@ $ cd uci-cs-253/week5/Nineteen
 
 $ node tf-19.js ../../stop_words.txt ../../pride-and-prejudice.txt
 ```
+
+## Week 6
+
+### 28.1
+
+```
+$ cd uci-cs-253/week6
+
+$ java TwentyEight.java ../pride-and-prejudice.txt ../stop_words.txt
+```
+
+### 28.2
+
+### 29.1
+
+```
+$ cd uci-cs-253/week6
+
+$ node --experimental-worker 29.1.js ../pride-and-prejudice.txt ../stop_words.txt
+```
+
+### 29.2
+
+```
+$ cd uci-cs-253/week6
+
+$ node --experimental-worker 29.2.js ../pride-and-prejudice.txt ../stop_words.txt
+```
+
+### 30.1
+
+```
+$ cd uci-cs-253/week6
+
+$ node --experimental-worker 31.1.js ../pride-and-prejudice.txt ../stop_words.txt
+```

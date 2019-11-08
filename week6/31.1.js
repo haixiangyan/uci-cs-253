@@ -46,8 +46,8 @@ function countWords(mapping) {
     return mapping
 }
 
-const stopWordsPath = '../stop_words.txt'
-const articlePath = '../pride-and-prejudice.txt'
+const articlePath = process.argv[2]
+const stopWordsPath = process.argv[3]
 
 function sort(wordFreq) {
     let rawCounts = []

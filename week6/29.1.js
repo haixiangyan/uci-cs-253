@@ -4,8 +4,9 @@ const { Worker } = require('worker_threads');
 let wordSpace = []
 let freqSpace = []
 
-const stopWordsPath = '../stop_words.txt'
-const articlePath = '../pride-and-prejudice.txt'
+const articlePath = process.argv[2]
+const stopWordsPath = process.argv[3]
+
 const UTF8 = 'utf8'
 
 const stopWords = new Set(fs.readFileSync(stopWordsPath, UTF8).split(','))

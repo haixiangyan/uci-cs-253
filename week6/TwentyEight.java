@@ -193,8 +193,8 @@ public class TwentyEight {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        String articlePath = "../pride-and-prejudice.txt";
-        String stopWordsPath = "../stop_words.txt";
+        String articlePath = args[0];
+        String stopWordsPath = args[1];
 
         DataStorageManager dataStorageManager = new DataStorageManager();
         StopWordManager stopWordManager = new StopWordManager(stopWordsPath);
