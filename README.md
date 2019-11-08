@@ -123,7 +123,9 @@ $ node tf-19.js ../../stop_words.txt ../../pride-and-prejudice.txt
 ```
 $ cd uci-cs-253/week6
 
-$ java TwentyEight.java ../pride-and-prejudice.txt ../stop_words.txt
+$ javac TwentyEight.java
+
+$ java TwentyEight ../pride-and-prejudice.txt ../stop_words.txt
 ```
 
 ### 28.2
@@ -131,7 +133,9 @@ $ java TwentyEight.java ../pride-and-prejudice.txt ../stop_words.txt
 ```
 $ cd uci-cs-253/week6
 
-$ java TwentyEightDotTwo.java ../pride-and-prejudice.txt ../stop_words.txt
+$ javac TwentyEightDotTwo.java
+
+$ java TwentyEightDotTwo ../pride-and-prejudice.txt ../stop_words.txt
 ```
 
 ### 29.1
