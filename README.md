@@ -128,6 +128,12 @@ $ java TwentyEight.java ../pride-and-prejudice.txt ../stop_words.txt
 
 ### 28.2
 
+```
+$ cd uci-cs-253/week6
+
+$ java TwentyEightDotTwo.java ../pride-and-prejudice.txt ../stop_words.txt
+```
+
 ### 29.1
 
 ```
