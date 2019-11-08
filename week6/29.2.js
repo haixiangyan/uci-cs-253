@@ -1,5 +1,5 @@
 const fs = require('fs')
-const { Worker } = require('worker_threads');
+const {Worker} = require('worker_threads')
 
 let wordSpace = []
 let freqSpace = []
@@ -18,8 +18,7 @@ function processWords() {
         if (!stopWords.has(word)) {
             if (wordFreqs[word]) {
                 wordFreqs[word] += 1
-            }
-            else {
+            } else {
                 wordFreqs[word] = 1
             }
         }
@@ -37,22 +36,16 @@ let workers = []
 for (let i = 0; i < 5; i++) {
     try {
         workers.push(new Worker(processWords))
-    }
-    catch(e) {}
+    } catch (e) {}
 }
 
 let wordFreqs = {}
 while (freqSpace.length !== 0) {
     const freqs = freqSpace.pop()
     for (let [k, v] of Object.entries(freqs)) {
-        let count = 0
-        if (wordFreqs[k]) {
-            count = wordFreqs[k] + v
-        }
-        else {
-            count = v
-        }
-        wordFreqs[k] = count
+        // Wait for next sub thread
+        setTimeout(() => {}, 3000)
+        wordFreqs[k] = wordFreqs[k] ? wordFreqs[k] + v : v
     }
 }
 
