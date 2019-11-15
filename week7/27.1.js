@@ -52,8 +52,8 @@ function sorted(freqs) {
     return rawCounts.sort((a, b) => b.frequency - a.frequency)
 }
 
-const stopWordsFile = '../stop_words.txt'
-const articleFile = '../pride-and-prejudice.txt'
+const stopWordsFile = process.argv[2]
+const articleFile = process.argv[3]
 
 const result = countAndSort(articleFile).next().value
 

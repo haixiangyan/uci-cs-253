@@ -40,8 +40,8 @@ function update() {
     }
 }
 
-const stopWordsFile = '../stop_words.txt'
-const articleFile = '../pride-and-prejudice.txt'
+const stopWordsFile = process.argv[2]
+const articleFile = process.argv[3]
 
 const pattern = /[a-zA-Z]{2,}/g
 allWords[0] = fs.readFileSync(articleFile, UTF8).match(pattern).map(word => word.toLowerCase())

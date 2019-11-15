@@ -161,3 +161,18 @@ $ cd uci-cs-253/week6
 
 $ node --experimental-worker 31.1.js ../pride-and-prejudice.txt ../stop_words.txt
 ```
+
+## Week 7
+### 26.1
+```
+$ cd uci-cs-253/week7
+
+$ node 26.1.js ../stop_words.txt ../pride-and-prejudice.txt
+```
+
+### 27.1
+```
+$ cd uci-cs-253/week7
+
+$ node 27.1.js ../stop_words.txt ../pride-and-prejudice.txt
+```
