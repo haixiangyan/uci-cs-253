@@ -2,7 +2,8 @@ const fs = require('fs')
 
 const UTF8 = 'utf8'
 
-const articleFile = '../pride-and-prejudice.txt'
+// '../pride-and-prejudice.txt'
+const articleFile = process.argv[2]
 
 const rawData = fs.readFileSync(articleFile, UTF8)
 
@@ -45,8 +46,6 @@ const LEET = {
     9: 'g'
 }
 
-const SYMBOLS = Object.values(LEET)
-
 const countReducer = (accumulator, currentSymbol, index, stringArray) => {
     // Ignore first element
     if (index === 0) {
@@ -68,7 +67,7 @@ const sortHelper = (a, b) => b[1] - a[1]
 
 const printEach = ([char, count]) => console.log(`"${char}" - ${count}`)
 
-const results = Object.entries(
+Object.entries(
     rawData
         .split('')
         .filter(char => /[a-zA-Z0-9]/.test(char))
@@ -79,5 +78,3 @@ const results = Object.entries(
     .sort(sortHelper)
     .slice(0, 5)
     .forEach(printEach)
-
-console.log(results)
