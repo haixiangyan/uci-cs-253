@@ -100,14 +100,14 @@ $ node 15.2.js ../stop_words.txt ../pride-and-prejudice.txt
 
 ## Week 5
 
-### 16.1
+### 16.1.js
 ```
 $ cd uci-cs-253/week5
 
 $ node Sixteen.js ../stop_words.txt ../pride-and-prejudice.txt
 ```
 
-### 19.1
+### 19.1.js
 If you download from Canvas, please run `npm install` first.
 
 ```
@@ -118,7 +118,7 @@ $ node tf-19.js ../../stop_words.txt ../../pride-and-prejudice.txt
 
 ## Week 6
 
-### 28.1
+### 28.1.js
 
 ```
 $ cd uci-cs-253/week6
@@ -128,7 +128,7 @@ $ javac TwentyEight.java
 $ java TwentyEight ../pride-and-prejudice.txt ../stop_words.txt
 ```
 
-### 28.2
+### 28.2.js
 
 ```
 $ cd uci-cs-253/week6
@@ -138,7 +138,7 @@ $ javac TwentyEightDotTwo.java
 $ java TwentyEightDotTwo ../pride-and-prejudice.txt ../stop_words.txt
 ```
 
-### 29.1
+### 29.1.js
 
 ```
 $ cd uci-cs-253/week6
@@ -146,7 +146,7 @@ $ cd uci-cs-253/week6
 $ node --experimental-worker 29.1.js ../pride-and-prejudice.txt ../stop_words.txt
 ```
 
-### 29.2
+### 29.2.js
 
 ```
 $ cd uci-cs-253/week6
@@ -154,7 +154,7 @@ $ cd uci-cs-253/week6
 $ node --experimental-worker 29.2.js ../pride-and-prejudice.txt ../stop_words.txt
 ```
 
-### 30.1
+### 30.1.js
 
 ```
 $ cd uci-cs-253/week6
@@ -163,14 +163,14 @@ $ node --experimental-worker 31.1.js ../pride-and-prejudice.txt ../stop_words.tx
 ```
 
 ## Week 7
-### 26.1
+### 26.1.js
 ```
 $ cd uci-cs-253/week7
 
 $ node 26.1.js ../stop_words.txt ../pride-and-prejudice.txt
 ```
 
-### 27.1
+### 27.1.js
 ```
 $ cd uci-cs-253/week7
 
@@ -178,7 +178,7 @@ $ node 27.1.js ../stop_words.txt ../pride-and-prejudice.txt
 ```
 
 ## Week 8
-### Exercise 8
+### index.js
 
 ```
 $ cd uci-cs-253/week8
