@@ -69,12 +69,12 @@ const printEach = ([char, count]) => console.log(`"${char}" - ${count}`)
 
 Object.entries(
     rawData
-        .split('')
-        .filter(char => /[a-zA-Z0-9]/.test(char))
-        .map(char => char.toUpperCase())
-        .map(char => LEET[char])
-        .reduce(countReducer, {})
+        .split('') // Make string to array
+        .filter(char => /[a-zA-Z0-9]/.test(char)) // Remove character that is not letter or digit
+        .map(char => char.toUpperCase()) // Make them to upper case
+        .map(char => LEET[char]) // Transfer them to LEET
+        .reduce(countReducer, {}) // Count symbol as { 2gram: count }
 )
-    .sort(sortHelper)
-    .slice(0, 5)
-    .forEach(printEach)
+    .sort(sortHelper) // Sort array [[2gram, count], ...]
+    .slice(0, 5) // Get top 5
+    .forEach(printEach) // Print results
