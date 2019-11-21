@@ -176,3 +176,12 @@ $ cd uci-cs-253/week7
 
 $ node 27.1.js ../stop_words.txt ../pride-and-prejudice.txt
 ```
+
+## Week 8
+### Exercise 8
+
+```
+$ cd uci-cs-253/week8
+
+$ node index.js ../pride-and-prejudice.txt
+```
