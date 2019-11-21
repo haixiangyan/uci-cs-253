@@ -2,11 +2,6 @@ const fs = require('fs')
 
 const UTF8 = 'utf8'
 
-// '../pride-and-prejudice.txt'
-const articleFile = process.argv[2]
-
-const rawData = fs.readFileSync(articleFile, UTF8)
-
 const LEET = {
     A: '4',
     B: '13',
@@ -66,6 +61,11 @@ const countReducer = (accumulator, currentSymbol, index, stringArray) => {
 const sortHelper = (a, b) => b[1] - a[1]
 
 const printEach = ([char, count]) => console.log(`"${char}" - ${count}`)
+
+// '../pride-and-prejudice.txt'
+const articleFile = process.argv[2]
+
+const rawData = fs.readFileSync(articleFile, UTF8)
 
 Object.entries(
     rawData
