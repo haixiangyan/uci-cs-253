@@ -58,6 +58,8 @@ const countReducer = (accumulator, currentSymbol, index, stringArray) => {
     return accumulator
 }
 
+const replaceHelper = char => LEET[char]
+
 const sortHelper = (a, b) => b[1] - a[1]
 
 const printEach = ([char, count]) => console.log(`"${char}" - ${count}`)
@@ -69,10 +71,9 @@ const rawData = fs.readFileSync(articleFile, UTF8)
 
 Object.entries(
     rawData
-        .split('') // Make string to array
-        .filter(char => /[a-zA-Z0-9]/.test(char)) // Remove character that is not letter or digit
-        .map(char => char.toUpperCase()) // Make them to upper case
-        .map(char => LEET[char]) // Transfer them to LEET
+        .match( /[a-zA-Z0-9]{2,}/g) // Get all words
+        .map(word => word.toUpperCase()) // Make them to upper case
+        .map(word => word.replace(/[a-zA-Z]/g, replaceHelper)) // Transfer all words to LEET
         .reduce(countReducer, {}) // Count symbol as { 2gram: count }
 )
     .sort(sortHelper) // Sort array [[2gram, count], ...]
