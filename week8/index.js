@@ -71,7 +71,7 @@ const rawData = fs.readFileSync(articleFile, UTF8)
 
 Object.entries(
     rawData
-        .match( /[a-zA-Z0-9]{2,}/g) // Get all words
+        .match( /[\w]+/g) // Get all words
         .map(word => word.toUpperCase()) // Make them to upper case
         .map(word => word.replace(/[a-zA-Z]/g, replaceHelper)) // Transfer all words to LEET
         .reduce(countReducer, {}) // Count symbol as { 2gram: count }
