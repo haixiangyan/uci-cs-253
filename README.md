@@ -185,3 +185,12 @@ $ cd uci-cs-253/week8
 
 $ node index.js ../pride-and-prejudice.txt
 ```
+
+## Week 9
+### easy.py
+
+```
+$ cd uci-cs-253/week9
+
+$ python3 easy.py ../pride-and-prejudice.txt
+```
