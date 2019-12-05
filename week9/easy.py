@@ -17,7 +17,6 @@ from six.moves import range
 import string, re, collections, os, sys, operator
 
 stopwords = set(open('../stop_words.txt').read().split(','))
-article_path = '../pride-and-prejudice.txt'
 all_words = re.findall('[a-z]{2,}', open(sys.argv[1]).read().lower())
 words = [w for w in all_words if w not in stopwords]
 
