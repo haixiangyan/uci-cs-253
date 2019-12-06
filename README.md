@@ -194,3 +194,11 @@ $ cd uci-cs-253/week9
 
 $ python3 easy.py ../pride-and-prejudice.txt
 ```
+
+### moderate.py
+
+```
+$ cd uci-cs-253/week9
+
+$ python3 moderate.py ../pride-and-prejudice.txt
+```
